@@ -76,3 +76,29 @@ public class Task4 {
 
     }
 }
+
+
+System.out.println("Минус сменился плюсом: " + changes + " раз");
+        System.out.println("Самая длинная череда плюсовых дней: " + best);
+        System.out.println();
+
+        int min = temp[0];
+        for (int i = 0; i < temp.length; i++) {
+            if (temp[i] < min) {
+                min = temp[i];
+            }
+        }
+
+        for (int i = 0; i < temp.length; i++) {
+            System.out.printf("%2d марта %4d ", i + 1, temp[i]);
+
+            if (temp[i] < 0) {
+                System.out.print(" ".repeat(-min + temp[i]));
+                System.out.print("#".repeat(-temp[i]));
+                System.out.println("|");
+            } else {
+                System.out.print(" ".repeat(-min));
+                System.out.print("|");
+                System.out.println("#".repeat(temp[i]));
+            }
+        }
